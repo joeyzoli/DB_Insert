@@ -1,3 +1,5 @@
+import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -15,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -39,6 +42,7 @@ public class Ablak extends JFrame
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private static Ablak frame;
 	private JPanel contentPane;
 	private JTextField ip;
 	private JTextField user;
@@ -64,7 +68,7 @@ public class Ablak extends JFrame
 			{
 				try 
 				{
-					Ablak frame = new Ablak();
+				frame = new Ablak();
 					frame.setVisible(true);
 				} 
 				catch (Exception e) 
@@ -241,6 +245,9 @@ public class Ablak extends JFrame
 						.addComponent(feltolt))
 					.addGap(20))
 		);
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+		//setLocationRelativeTo(null);
 		contentPane.setLayout(gl_contentPane);
 	}
 	
@@ -258,6 +265,7 @@ public class Ablak extends JFrame
 	{
 		public void actionPerformed(ActionEvent e)
 		 {
+			frame.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 			Connection conn = null;
 	        Statement stmt = null;
 	        try 
@@ -310,7 +318,7 @@ public class Ablak extends JFrame
 	        
 	        statement.close();
 	        conn.close();
-	        
+	        frame.setCursor(null);
 	        JOptionPane.showMessageDialog(null, "Feltöltés sikeres", "Info", 1);
 	        } 
 	        catch (SQLException e1)                                                     //kivétel esetén történik
