@@ -326,17 +326,20 @@ public class Ablak extends JFrame
 	           e1.printStackTrace();
 	           String hibauzenet2 = e1.toString();
 	           JOptionPane.showMessageDialog(null, hibauzenet2 + "\n \n A Mentés sikertelen!!", "Hiba üzenet", 2);
+	           frame.setCursor(null);
 	        } 
 	        catch (Exception e1) 
 	        {
 	           e1.printStackTrace();
 	           String hibauzenet2 = e1.toString();
 	           JOptionPane.showMessageDialog(null, hibauzenet2, "Hiba üzenet", 2);
+	           frame.setCursor(null);
 	        } 
 	        finally                                                                     //finally rész mindenképpen lefut, hogy hiba esetén is lezárja a kacsolatot
 	        {
 	           try 
 	           {
+	        	   frame.setCursor(null);
 	              if (stmt != null)
 	                 conn.close();
 	           } 
