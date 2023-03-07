@@ -99,14 +99,17 @@ public class Ablak extends JFrame
 		
 		ip = new JTextField();
 		ip.setColumns(10);
+		ip.setText("172.20.22.29");
 		
 		user = new JTextField();
+		user.setText("veasquality");
 		user.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Felhaszn\u00E1l\u00F3:");
 		
 		password = new JTextField();
 		password.setColumns(10);
+		password.setText("kg6T$kd14TWbs9&gd");
 		
 		JLabel lblNewLabel_3 = new JLabel("Jelsz\u00F3:");
 		
@@ -130,7 +133,7 @@ public class Ablak extends JFrame
 		feltolt.addActionListener(new Feltolt());
 		
 		sql = new JTextArea();
-		sql.setText("INSERT INTO adatbazis VALUE(?, ?, ?)");
+		sql.setText("INSERT INTO qualitydb.Gyartasi_adatok (VT_azon, Cikksz, Vevo, Vevoi_megnev, Datum, Muszak, Ellenor_neve, Hibagyujtes_helye, FElajanlott, Minta_nagysag, PCB_sorszam, Hibakod, Hiba_megnevezes, Pozicio, Hibak_szam, Sor, Rogzites_idopontja) VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 		gorgeto = new JScrollPane(sql);
 		
 		letrehoz = new JTextArea();
