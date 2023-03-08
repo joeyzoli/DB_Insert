@@ -133,7 +133,7 @@ public class Ablak extends JFrame
 		feltolt.addActionListener(new Feltolt());
 		
 		sql = new JTextArea();
-		sql.setText("INSERT INTO qualitydb.Gyartasi_adatok (VT_azon, Cikksz, Vevo, Vevoi_megnev, Datum, Muszak, Ellenor_neve, Hibagyujtes_helye, FElajanlott, Minta_nagysag, PCB_sorszam, Hibakod, Hiba_megnevezes, Pozicio, Hibak_szam, Sor, Rogzites_idopontja) VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+		sql.setText("INSERT INTO qualitydb.Vevoireklamacio_felelosok (ID, Datum, Cikkszam, Zarolt, Zarolt_db, Talalt_db, Muszaki_doku, Termeles, Felelos, Hatarido, Lezarva) VALUE(?,?,?,?,?,?,?,?,?,?,?)");
 		gorgeto = new JScrollPane(sql);
 		
 		letrehoz = new JTextArea();
